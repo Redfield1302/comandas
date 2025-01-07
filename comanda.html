@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Faça seu Pedido</h1>
+        
+        <!-- Formulário de pedido -->
+        <form id="orderForm">
+            <!-- Tamanho da Pizza -->
+            <label for="size">Escolha o Tamanho da Pizza:</label>
+            <select id="size" name="size" required>
+                <option value="media">Média</option>
+                <option value="Grande">Grande</option>
+                <option value="Familia">Família</option>
+            </select>
+
+            <!-- Sabores -->
+            <label for="flavor">Escolha o(s) Sabores da Pizza:</label>
+            <select id="flavor" name="flavor" multiple required>
+                <option value="margarita">Margarita</option>
+                <option value="calabresa">Calabresa</option>
+                <option value="portuguesa">Portuguesa</option>
+                <option value="frango">Frango</option>
+                <option value="vegetariana">Vegetariana</option>
+                <option value="fourCheese">4 Queijos</option>
+            </select>
+
+            <!-- Nome do Cliente -->
+            <label for="name">Nome do Cliente:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Forma de pagamento -->
+            <label for="payment">Forma de Pagamento:</label>
+            <select id="payment" name="payment" required>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao">Cartão</option>
+                <option value="pix">PIX</option>
+            </select>
+
+            <!-- Botões -->
+            <button type="submit">Enviar Pedido</button>
+            <button type="button" id="printBtn" style="display: none;" onclick="printReceipt()">Imprimir Comanda</button>
+        </form>
+
+        <!-- Área para confirmação do pedido -->
+        <div id="confirmation" style="display: none;">
+            <h2>Pedido Enviado!</h2>
+            <p id="orderDetails"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
